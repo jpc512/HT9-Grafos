@@ -1,0 +1,13 @@
+Mixco Antigua 10
+Escuintla VillaNueva 780
+VillaNueva Guatemala 100
+Guatemala Antigua 85
+Guatemala SantaRosa 80
+Mixco SantaRosa 10
+SantaRosa Mixco 10
+VillaNueva Mixco 5
+SantaRosa Antigua 25
+Mixco Guatemala 30
+Mixco Escuintla 50
+Escuintla Mixco 50
+Guatemala Mixco 30
