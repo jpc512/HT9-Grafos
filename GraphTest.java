@@ -23,6 +23,30 @@ public class GraphTest {
     void testChangeEdge() {
 		testAdd();
         g.addEdge("A", "B", 1f);
-		assertEquals(1f, g.data[g.dict.get("A").index()][g.dict.get("B").index()]);
+		assertEquals(1f, g.data[g.dict.get("A").index()][g.dict.get("B").index()].label());
+        g.addEdge("A", "B", 2f);
+		assertEquals(2f, g.data[g.dict.get("A").index()][g.dict.get("B").index()].label());
 	}
+
+    @Test
+    void testRemoveEdge() {
+		testAdd();
+        g.addEdge("A", "B", 1f);
+		assertEquals(1f, g.data[g.dict.get("A").index()][g.dict.get("B").index()].label());
+        g.removeEdge("A", "B");
+		assertEquals(null, g.data[g.dict.get("A").index()][g.dict.get("B").index()]);
+	}
+
+    @Test
+    void testFloyd(){
+        testAdd();
+        g.addEdge("A", "B", 1f);
+        g.addEdge("A", "C", 2f);
+        g.addEdge("A", "D", 4f);
+        g.addEdge("D", "A", 2f);
+        g.floyd();
+        assertEquals(" & ", g.costos[g.dict.get("B").index()][g.dict.get("C").index()].toString());
+        assertEquals(4f, g.costos[g.dict.get("D").index()][g.dict.get("C").index()].label());
+
+    }
 }
